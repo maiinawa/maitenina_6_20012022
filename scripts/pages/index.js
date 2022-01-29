@@ -1,3 +1,5 @@
+import {photographerFactory} from '/scripts/factories/photographer.js'
+
     async function getPhotographers() {
         // Penser à remplacer par les données récupérées dans le json
         const photographers = await fetch('/data/photographers.json')
