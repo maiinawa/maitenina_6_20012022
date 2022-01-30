@@ -31,7 +31,7 @@ export function photographerFactory(data) {
         return (article);
 
     }
-//Crée le modèle pour afficher les cartes profils des photographes
+    //Crée le modèle pour afficher les cartes profils des photographes
     function getUserCardDOM() {
         const a = document.createElement ('a');
         a.setAttribute("href",`./photographer.html?user=${id}`);
