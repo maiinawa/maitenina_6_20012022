@@ -35,19 +35,34 @@ async function getProfileByParams(){
     }
 }
 
- async function displayHeader() {
-    const oneProfile = await getProfileByParams()
+ async function displayHeader(oneprofile) {
     const photographHeader = document.querySelector(".photograph-header");
     if (photographHeader){
-            const headerModel = photographerFactory(oneProfile);
-            console.log(headerModel);
-            const headerDOM = headerModel.getProfileHeader(oneProfile);
+
+        oneprofile.forEach((oneprofile) => {
+            const headerModel = photographerFactory(oneprofile);
+            const headerDOM = headerModel.getProfileHeader(oneprofile);
             photographHeader.appendChild(headerDOM);
-            console.log(headerDOM);
+        });
+
     ;
 
     }
 };
+// async function displayHeader() {
+//     const oneProfile = await getProfileByParams()
+//     console.log(oneProfile);
+//     const photographHeader = document.querySelector(".photograph-header");
+//     if (photographHeader){
+//             const headerModel = photographerFactory(oneProfile);
+//             console.log(headerModel);
+//             const headerDOM = headerModel.getProfileHeader(oneProfile);
+//             photographHeader.appendChild(headerDOM);
+//             console.log(headerDOM);
+//     ;
+
+//     }
+// };
 
 async function headerProfile() {
     // Récupère les datas des photographer_section
