@@ -2,15 +2,16 @@ import {photographerFactory} from '/scripts/factories/photographer.js'
 import headerProfile from './photographer'
 
     async function getPhotographers() {
-        // Penser à remplacer par les données récupérées dans le json
+        // Récupère fichier photographes
         const photographers = await fetch('/data/photographers.json')
         .then(response => response.json())
         .then(data => data)
-        // et bien retourner le tableau photographers seulement une fois
+        // Retourner le tableau photographers seulement une fois
         return photographers
     }
 
     async function displayData(photographers) {
+        // Récupère les datas des photographers et prépare le modèle de DOM à implémenter dans le header
         const photographersSection = document.querySelector(".photographer_section");
         if (photographersSection){
             photographers.forEach((photographer) => {
@@ -25,7 +26,6 @@ import headerProfile from './photographer'
     async function index() {
         // Récupère les datas des photographer_section
         const photographersSection = document.querySelector(".photographer_section");
-
         if (photographersSection){
         const { photographers } = await getPhotographers();
         displayData(photographers);

@@ -1,7 +1,8 @@
 export function photographerFactory(data) {
     const { name, portrait, id, city, country, tagline, price} = data;
-
     const picture = `assets/photographers/${portrait}`;
+
+    //Créer le modèle pour afficher le header page profil photographe
     function getProfileHeader(){
         
         const article = document.createElement( 'article' );
@@ -17,7 +18,7 @@ export function photographerFactory(data) {
         
         const slogan = document.createElement( 'p' )
         slogan.textContent = tagline;
-        
+
         const pForPrice = document.createElement( 'p' )
         pForPrice.textContent = `${price}€/jour`
 
@@ -30,7 +31,7 @@ export function photographerFactory(data) {
         return (article);
 
     }
-
+//Crée le modèle pour afficher les cartes profils des photographes
     function getUserCardDOM() {
         const a = document.createElement ('a');
         a.setAttribute("href",`./photographer.html?user=${id}`);
